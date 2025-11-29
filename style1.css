@@ -484,7 +484,7 @@ video {
 /* =====================
    📱 RESPONSIVE MODE
 ===================== */
-@media (max-width: 2048px) {
+@media (max-width: 890px) {
 
   /* ======= GENERAL ======= */
   body {
@@ -589,6 +589,7 @@ video {
   }
 
 }
+
 
 
 
