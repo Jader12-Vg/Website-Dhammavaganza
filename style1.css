@@ -481,107 +481,43 @@ video {
     border-radius: 12px;
 }
 
-/* ==================== MOBILE RESPONSIVE ==================== */
+.nav-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* ===== MOBILE NAVBAR ===== */
 @media (max-width: 768px) {
-
-  /* ==== Global Text Scaling ==== */
-  body {
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 24px;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  h3 {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  p {
-    font-size: 15px;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  /* ==== Navbar ==== */
-  nav {
+  .navbar ul {
+    display: none;
     flex-direction: column;
-    padding: 12px;
-    gap: 10px;
+    gap: 15px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    padding: 20px 0;
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    color: gold;
+    margin-left: auto;
+    margin-right: 15px;
   }
 
   nav a {
-    font-size: 16px;
-  }
-
-  /* ==== Video ==== */
-  .video-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  video {
-    width: 95% !important;
-    height: auto;
-  }
-
-  /* ==== Slideshow ==== */
-  .slideshow-container {
-    width: 90%;
-    margin: auto;
-  }
-
-  .slide-buttons button {
     font-size: 18px;
-    padding: 5px 12px;
-  }
-
-  /* ==== Timeline / Kalender ==== */
-  .timeline-container {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .timeline-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 15px;
-  }
-
-  .timeline-dot {
-    width: 10px;
-    height: 10px;
-  }
-
-  /* ==== Tools & Materials (Alat & Bahan) ==== */
-  .alat-bahan {
-    width: 90%;
-    margin: auto;
-    padding-left: 10px;
-    border-left: 3px solid gold;
-  }
-
-  .alat-bahan ul li {
-    font-size: 15px;
-    margin-bottom: 6px;
-  }
-
-  /* ==== Footer ==== */
-  footer {
-    font-size: 13px;
-    text-align: center;
-    padding: 10px;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
   }
 }
+
