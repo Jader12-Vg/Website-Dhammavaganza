@@ -1,0 +1,482 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F9F5D7;
+    color: #222831;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #d4a017;
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+    transition: 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    backdrop-filter: blur(6px);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    position: relative;
+    transition: 0.4s;
+}
+
+.navbar a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width .3s ease;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ===== DHARMACAKRA ICON ANIMATION ===== */
+.dharma-icon {
+    width: 150px;
+    margin: 0 auto 25px;
+    display: block;
+    animation: calmSpin 18s linear infinite, pulseGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+@keyframes calmSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(255,215,0,0.4)); }
+    50% { filter: drop-shadow(0 0 18px rgba(255,215,0,0.8)); }
+    100% { filter: drop-shadow(0 0 5px rgba(255,215,0,0.4)); }
+}
+
+
+
+/* ================= HOME SECTION ================= */
+
+.home-section {
+    padding-top: 140px;
+    min-height: 100vh;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Title */
+.home-content h1 {
+    font-family: "Cinzel", serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #C89E45;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    animation: fadeDown 1.5s ease;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    animation: fadeDown 1.8s ease;
+}
+
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity:1;}
+}
+
+/* ================= GROUP PHOTO ================= */
+.group-photo-container {
+    width: 70%;
+    max-width: 750px;
+    aspect-ratio: 16/9;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.group-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.group-photo-container:hover img {
+    filter: brightness(0.35);
+    transform: scale(1.02);
+}
+
+.photo-hover-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0;
+    transition: .4s;
+}
+
+.group-photo-container:hover .photo-hover-text {
+    opacity: 1;
+}
+
+/* ================= MEMBERS ================= */
+.team-grid.single {
+  justify-content: center;
+}
+
+.cofasilitator h2 {
+  margin-top: 40px;
+  font-size: 26px;
+}
+
+.members h2 {
+  margin-top: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.member {
+  text-align: center;
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #e2c46d;
+}
+
+
+/* ================= 8 PATH BUTTON ================= */
+/* SLIDE STYLE */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.swiper-slide h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.swiper-slide p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.icon {
+    width: 140px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+/* Fade animation */
+.swiper {
+    width: 80vw;
+    height: 100vh;
+}
+
+.point-list li::marker {
+  content: "☸  ";
+  color: #caa313;
+  font-size: 20px;
+}
+
+.point-list {
+  text-align: left;
+  font-size: 18px;
+  max-width:500px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .group-photo-container {
+        width: 90%;
+    }
+
+    .team-grid {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .navbar ul {
+        gap: 20px;
+    }
+}
+
+/* ===== PROGRESS BAR ===== */
+/* ===== Fix Section Layout ===== */
+.proyek-section {
+    margin-left: 100px; /* bisa diganti 50px/60px sesuai selera */
+    max-width: 950px;
+}
+
+
+
+.progress-container {
+    width: 80%;
+    height: 30px;
+    background: #ddd;
+    border-radius: 20px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #d4a017, #f2c94c);
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    line-height: 30px;
+    transition: width 1s ease-in-out;
+    border-radius: 20px;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+    width: 85%;
+    margin: 20px auto;
+    border-left: 3px solid gold;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.timeline-item.active {
+    font-weight: bold;
+    opacity: 1;
+    color: #d4a017;
+}
+
+.timeline-item.done {
+    opacity: 1;
+    color: #3c7b2e;
+}
+
+.timeline-item .circle {
+    width: 14px;
+    height: 14px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    left: -31px;
+    top: 5px;
+}
+
+/* ===== SLIDESHOW ===== */
+.alat-bahan {
+    width: 85%;
+    margin: 20px auto;
+    border-left: 3px solid gold;
+    padding-left: 20px;
+}
+
+.alat-alat {
+    position: relative;
+    margin: 20px 0;
+    opacity: 1;
+}
+
+.bahan-bahan {
+    position: relative;
+    margin: 20px 0;
+    opacity: 1;
+}
+
+.alat-alat .circle {
+    width: 14px;
+    height: 14px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    left: -31px;
+    top: 5px;
+}
+
+.bahan-bahan .circle {
+    width: 14px;
+    height: 14px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    left: -31px;
+    top: 5px;
+}
+
+/* ===== SLIDESHOW ===== */
+.judul-dokumentasi {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 350px;
+    margin: auto;
+}
+
+.slideshow-container img {
+    width: 200%;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Tombol Panah */
+.slide-buttons {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.slide-buttons button {
+    cursor: pointer;
+    background: gold;
+    color: #222;
+    border: none;
+    font-size: 20px;
+    padding: 6px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.slide-buttons button:hover {
+    background: #b88b12;
+}
+
+/* Posisi kiri & kanan */
+.slide-button.left {
+    left: 50px;
+}
+
+.slide-button.right {
+    right: 50px;
+}
+
+/* ==== Rotating Dharmacakra khusus materi ==== */
+.rotate-dharma {
+    animation: dharmaSpin 22s linear infinite, dharmaGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 196, 0, 0.6));
+}
+
+/* Slow calm rotation */
+@keyframes dharmaSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Soft glowing breathing effect */
+@keyframes dharmaGlow {
+    0% { filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.4)); }
+    50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9)); }
+    100% { filter: drop-shadow(0 0 6px rgba(255, 196, 0, 0.4)); }
+}
+
+
+/* ===== VIDEO ===== */
+.video-wrapper {
+    width: 70%;
+    margin: auto;
+    
+}
+
+.center-content {
+  text-align: center;
+  width: 100%;
+}
+
+/* Supaya video benar-benar center */
+.center-content video {
+    width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+}
